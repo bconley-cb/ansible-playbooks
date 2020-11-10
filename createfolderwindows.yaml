@@ -1,0 +1,20 @@
+--- 
+- hosts: all
+  tasks:
+
+# - name: "create Development folder"
+#   win_file: 
+#     path: "C:\\Sovlabs_Ansible"
+#     state: directory
+# - name: "set ACL of Development folder"
+  # win_acl: 
+  #   path: "C:\\Sovlabs_Ansible"
+  #   rights: FullControl
+  #   state: present
+  #   type: allow
+  #   user: Administrators
+
+- name: Run an executable and send data to the stdin for the executable
+  win_command: powershell.exe -
+  args:
+    stdin: Write-Host test

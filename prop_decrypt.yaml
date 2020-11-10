@@ -1,0 +1,13 @@
+--- 
+- hosts: all
+  remote_user: root
+  connection: ssh
+  gather_facts: yes
+  tasks:
+    - name: Set decrypted prop
+      set_fact:
+        decrypted_prop: "{{ TestEnc |vra_decrypt }}"
+
+    - name: Show string generated using a filter
+      debug:
+        var: decrypted_prop

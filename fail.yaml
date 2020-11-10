@@ -1,0 +1,11 @@
+---
+
+- name: 'Test playbook to test a failure'
+  hosts: all
+  gather_facts: false
+  var:
+    test: "ps"
+
+  tasks:
+    - name: process status
+      command: '{{ ps }}'

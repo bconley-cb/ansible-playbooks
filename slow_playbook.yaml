@@ -1,0 +1,9 @@
+- import_playbook: httpd.yaml
+- import_playbook: vsftpd.yaml
+- import_playbook: sleep.yaml
+- import_playbook: sleep.yaml
+- import_playbook: sleep.yaml
+- import_playbook: sleep.yaml
+- import_playbook: sleep.yaml
+- import_playbook: remove-httpd.yaml
+- import_playbook: remove-vsftpd.yaml

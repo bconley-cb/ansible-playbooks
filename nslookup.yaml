@@ -1,0 +1,21 @@
+--- 
+- hosts: all
+  remote_user: root
+  connection: ssh
+  gather_facts: yes
+  vars:
+    username: tperry
+  tasks:
+  - name: Install nslookup
+    # On AWS, httpd is already installed, but not runnning.
+    # Install nslookup, just for kicks, and call the start service for httpd.
+    yum: 
+      name: bind-utils
+      state: latest
+    notify:
+    - startservice
+  handlers:
+  - name: startservice
+    service:
+      name: httpd
+      state: restarted

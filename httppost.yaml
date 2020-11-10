@@ -1,0 +1,12 @@
+--- 
+- hosts: localhost
+  remote_user: root
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: Local HTTP call to {{ POST_URL }}
+    delegate_to: localhost
+    uri:
+      url: "{{ POST_URL }}"
+      method: POST
+      body: "{{ POST_BODY }}"

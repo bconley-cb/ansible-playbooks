@@ -1,0 +1,7 @@
+---
+
+- name: deploy-vRA-VM
+  hosts: all
+  tasks:
+    - name: deploy-vRA-VM-from-OVA
+      script: /opt/sovlabs/ova_request.sh

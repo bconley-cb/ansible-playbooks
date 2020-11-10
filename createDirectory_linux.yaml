@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+  - name: ansible create directory example
+    file:
+      path: /tmp/{{sfolder}}
+      state: directory

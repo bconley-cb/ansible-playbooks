@@ -1,0 +1,19 @@
+--- 
+- hosts: all
+  remote_user: root
+  connection: ssh
+  gather_facts: yes
+  vars:
+    username: tperry
+  tasks:
+  - name: Uninstall HTTP
+    yum: 
+      name: httpd
+      state: absent
+#    notify:
+#    - startservice
+#  handlers
+#  - name: startservice
+#     service:
+#      name: httpd
+#      state: restarted
